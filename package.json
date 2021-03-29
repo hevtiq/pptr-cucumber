@@ -1,0 +1,24 @@
+{
+  "name": "pptr-cucumber",
+  "version": "1.0.0",
+  "description": "Automated testing with Puppeteer and Cucumber JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js -f json:cucumber_report.json",
+    "generate:report": "node report.js"
+  },
+  "keywords": [
+    "puppeteer",
+    "gherkin",
+    "cucumber",
+    "javascript"
+  ],
+  "author": "Viet Hoang",
+  "license": "ISC",
+  "dependencies": {
+    "@cucumber/cucumber": "^7.0.0",
+    "chai": "^4.3.4",
+    "cucumber-html-reporter": "^5.4.0",
+    "puppeteer": "^8.0.0"
+  }
+}
