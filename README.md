@@ -41,24 +41,13 @@
 
     rem: install packages
     npm install puppeteer cucumber cucumber-html-reporter chai
-    npm install --save-dev babel-cli babel-preset-es2015
-```
-
-### 1.3 Config mocha
-
-```js
-// .babelrc
-{
-    "presets": ["es2015"]
-}
 ```
 
 ```json
 // package.json
 "scripts": {
-    "test": "./node_modules/mocha/bin/mocha --timeout=30000 ./build/tests/**.js",
-    "clean": "rm -rf build",
-    "build": "babel --preset es2015 -d /build /src"
+    "test": "cucumber-js -f json:cucumber_report.json",
+    "generate:report": "node report.js"
 },
 ```
 
@@ -70,16 +59,3 @@
 - Setup percy variable to window environment
 
 ## 2. Start project
-
-## 3. Other
-
-### 3.1 Fix bug
-
-> [Error: EPERM: operation not permitted, unlink 'C:\Users\<username>\AppData\Local\Temp\puppeteer_dev_chrome_profile-ueqolL\CrashpadMetrics-active.pma']
-
-```bat
-rd /s /q C:\Users\foo\AppData\Roaming\npm-cache
-rd /s /q C:\Users\foo\AppData\Roaming\npm
-npm clean cache --force
-npm install --no-bin-links --no-optional
-```
