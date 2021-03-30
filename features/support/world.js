@@ -2,11 +2,14 @@ const { setWorldConstructor } = require('@cucumber/cucumber');
 
 const { expect } = require('chai');
 
-const puppeteer = require("puppeteer");
+const puppeteer = require('puppeteer');
 
 class CustomWorld {
     async launchBrowser() {
-        this.browser = await puppeteer.launch({ headless: false });
+        this.browser = await puppeteer.launch({
+            headless: false,
+            ignoreHTTPSErrors: true,
+        });
         this.page = await this.browser.newPage();
     };
 
@@ -15,7 +18,7 @@ class CustomWorld {
     };
 
     async visit() {
-        await this.page.goto('http://zero.webappsecurity.com');
+        await this.page.goto('http://zero.webappsecurity.com/login.html');
     };
 
     async fillLoginForm() {
