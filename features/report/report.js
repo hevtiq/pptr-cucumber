@@ -3,11 +3,7 @@ const reporter = require('cucumber-html-reporter');
 
 // object options
 const options = {
-    // themes
-    // 1) bootstrap
-    // 2) hierarchy
-    // 3) foundation
-    // 4) simple
+    // themes: 1) bootstrap, 2) hierarchy, 3) foundation, 4) simple
     theme: 'bootstrap',
     jsonFile: 'features/report/cucumber_report.json',
     reportSuiteAsScenarios: true,
@@ -18,4 +14,5 @@ const options = {
     storeScreenshots: true,
 };
 
+// invoke method to generate report base on options
 reporter.generate(options);

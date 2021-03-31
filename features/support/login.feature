@@ -1,3 +1,9 @@
+# =========================================================
+# Define user story
+#
+# feature: login
+# scenario: User can login to application
+# =========================================================
 Feature: Login
     As a user
     I can login to application
